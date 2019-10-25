@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="br.com.telalogin">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="BOOKDROID"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".TelaCadastroCatLivro"></activity>
+        <activity
+            android:name=".TelaCategoriaLivro"
+            android:label="Cadastro de Categorias de Livros" />
+        <activity
+            android:name=".TelaListaLeitores"
+            android:label="Leitores Cadastrados" />
+        <activity
+            android:name=".TelaCadastroCatLeitor"
+            android:label="Cadastrar Leitores" />
+        <activity
+            android:name=".TelaCategoriaLeitor"
+            android:label="Cadastro de Leitores" />
+        <activity
+            android:name=".ListaDeCadastros"
+            android:label="Cadastros" />
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/AppTheme.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".TelaListaClientes"
+            android:label="Clientes Cadastrados" />
+        <activity
+            android:name=".TelaCadastroCliente"
+            android:label="Cadastro de Clientes" />
+        <activity
+            android:name=".TelaCadastro"
+            android:label="Cadastro de Clientes" />
+        <activity android:name=".MainActivity" />
+    </application>
+
+</manifest>
