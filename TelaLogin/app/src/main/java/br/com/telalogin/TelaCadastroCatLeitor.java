@@ -168,7 +168,7 @@ public class TelaCadastroCatLeitor extends AppCompatActivity {
         }
     }
 
-    //recupera as informações a hora de alterar o cadastro do cliente
+    //recupera as informações a hora de alterar o cadastro do leitor
     private void verificaParametro(){
         Bundle bundle = getIntent().getExtras();
 

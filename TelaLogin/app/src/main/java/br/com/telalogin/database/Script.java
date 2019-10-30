@@ -33,4 +33,17 @@ public class Script {
         return sql.toString();
 
     }
+
+    //Criando a Tabela Livro
+    public static String getCriarTabelaCategoriaLivro(){
+        StringBuilder sql = new StringBuilder();
+
+        sql.append("CREATE TABLE IF NOT EXISTS CATEGORIALIVRO ( ");
+        sql.append("   CDCATEGORIA      INTEGER PRIMARY KEY, ");
+        sql.append("   DSCATEGORIA      VARCHAR (70) NOT NULL DEFAULT (''), ");
+        sql.append("   NUMMAXDIAS       VARCHAR (70) NOT NULL DEFAULT (''), ");
+        sql.append("   TXMULTA          VARCHAR (10) NOT NULL DEFAULT (''))");
+
+        return sql.toString();
+    }
 }

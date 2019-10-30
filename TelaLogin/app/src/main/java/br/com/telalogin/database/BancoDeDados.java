@@ -15,6 +15,7 @@ public class BancoDeDados extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(Script.getCriarTableCliente());
         db.execSQL(Script.getCriarTabelaCategoriaLeitor());
+        db.execSQL(Script.getCriarTabelaCategoriaLivro());
 
 
     }

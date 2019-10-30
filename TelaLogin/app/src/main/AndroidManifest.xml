@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TelaCadastroCatLivro"></activity>
+        <activity android:name=".TelaCadastroCatLivro"
+            android:label="Cadastrar Categorias de livros"/>
+        <activity
+            android:name=".TelaListaCategoriaLivros"
+            android:label="Categoria de Livros Cadastrados"/>
         <activity
             android:name=".TelaCategoriaLivro"
             android:label="Cadastro de Categorias de Livros" />

@@ -22,6 +22,11 @@ public class TelaCategoriaLivro extends AppCompatActivity {
         startActivityForResult(intent, 0);
     }
 
+    public void irParaTelaListaCategoriaLivros(View view) {
+        Intent intent = new Intent(getApplicationContext(), TelaListaCategoriaLivros.class);
+        startActivity(intent);
+    }
+
 
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();

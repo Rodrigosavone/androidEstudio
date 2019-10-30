@@ -1,12 +1,5 @@
 package br.com.telalogin;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
@@ -14,38 +7,45 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.List;
 
-import br.com.telalogin.Dominio.Entidades.Leitor;
-import br.com.telalogin.Dominio.Repositorio.LeitorRepositorio;
+import br.com.telalogin.Dominio.Entidades.CategoriaLivro;
+import br.com.telalogin.Dominio.Repositorio.CategoriaLivroRepositorio;
 import br.com.telalogin.database.BancoDeDados;
 
-public class TelaListaLeitores extends AppCompatActivity {
+public class TelaListaCategoriaLivros extends AppCompatActivity {
 
     private SQLiteDatabase conexao;
     private BancoDeDados bancoDeDados;
 
-    LeitorRepositorio leitorRepositorio;
-    LeitorAdpter leitorAdpter;
+    CategoriaLivroRepositorio categoriaLivroRepositorio;
+    CategoriaLirvoAdapter categoriaLirvoAdapter;
 
 
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.content_lista_leitores);
-        RecyclerView lstDadosLeitor = (RecyclerView) findViewById(R.id.lstDadosLeitor);
+        setContentView(R.layout.content_lista_categoria_livros);
+        RecyclerView lstDadosCatLivros = (RecyclerView) findViewById(R.id.lstDadosCatLivros);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        //criar a conexão com o banco de dados
         criarConexao();
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        lstDadosLeitor.setLayoutManager(linearLayoutManager);
+        lstDadosCatLivros.setLayoutManager(linearLayoutManager);
 
-        leitorRepositorio = new LeitorRepositorio(conexao);
-        List<Leitor> dados = leitorRepositorio.buscar();
-        leitorAdpter = new LeitorAdpter(dados);
+        categoriaLivroRepositorio = new CategoriaLivroRepositorio(conexao);
+        List<CategoriaLivro> dados = categoriaLivroRepositorio.buscar();
+        categoriaLirvoAdapter = new CategoriaLirvoAdapter(dados);
 
-        lstDadosLeitor.setAdapter(leitorAdpter);
+        lstDadosCatLivros.setAdapter(categoriaLirvoAdapter);
     }
 
     private void criarConexao(){
@@ -67,17 +67,17 @@ public class TelaListaLeitores extends AppCompatActivity {
 
     //método para atualizar a lista de leitores cadastrados apos a exlusão de um leitor
     public void atualizarExlusao(View view) {
-        Intent intent = new Intent(getApplicationContext(), TelaListaLeitores.class);
+        Intent intent = new Intent(getApplicationContext(), TelaListaCategoriaLivros.class);
         startActivityForResult(intent,0);
 
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        List<Leitor> dados = leitorRepositorio.buscar();
-        leitorAdpter = new LeitorAdpter(dados);
-        RecyclerView lstDadosLeitor = (RecyclerView) findViewById(R.id.lstDadosLeitor);
-        lstDadosLeitor.setAdapter(leitorAdpter);
+        List<CategoriaLivro> dados = categoriaLivroRepositorio.buscar();
+        categoriaLirvoAdapter = new CategoriaLirvoAdapter(dados);
+        RecyclerView lstDadosCatLivros = (RecyclerView) findViewById(R.id.lstDadosCatLivros);
+        lstDadosCatLivros.setAdapter(categoriaLirvoAdapter);
 
     }
 
