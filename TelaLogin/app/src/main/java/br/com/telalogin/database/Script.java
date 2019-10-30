@@ -39,7 +39,8 @@ public class Script {
         StringBuilder sql = new StringBuilder();
 
         sql.append("CREATE TABLE IF NOT EXISTS CATEGORIALIVRO ( ");
-        sql.append("   CDCATEGORIA      INTEGER PRIMARY KEY, ");
+        sql.append("   CODIGO           INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, ");
+        sql.append("   CDCATEGORIA      VARCHAR (70) NOT NULL DEFAULT (''), ");
         sql.append("   DSCATEGORIA      VARCHAR (70) NOT NULL DEFAULT (''), ");
         sql.append("   NUMMAXDIAS       VARCHAR (70) NOT NULL DEFAULT (''), ");
         sql.append("   TXMULTA          VARCHAR (10) NOT NULL DEFAULT (''))");

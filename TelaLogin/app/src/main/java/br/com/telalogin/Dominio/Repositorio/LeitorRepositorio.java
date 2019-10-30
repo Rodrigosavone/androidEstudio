@@ -43,7 +43,7 @@ public class LeitorRepositorio {
         public void alterar(Leitor leitor){
 
         ContentValues contentValues = new ContentValues();
-        contentValues.put("CODIGO",leitor.cdCategoria);
+        contentValues.put("CODIGO",leitor.codigo);
         contentValues.put("CDCATEGORIA",leitor.cdCategoria);
         contentValues.put("DSCATEGORIA",leitor.dsCategoria);
         contentValues.put("NUMMAXDIAS",leitor.numMaxDias);

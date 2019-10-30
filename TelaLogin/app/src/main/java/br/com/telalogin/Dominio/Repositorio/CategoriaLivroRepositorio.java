@@ -36,7 +36,7 @@ public class CategoriaLivroRepositorio {
         String[] paramentros = new String[1];
         paramentros[0] = String.valueOf(codigo);
 
-        conexao.delete("CATEGORIALIVRO","CDCATEGORIA = ?",paramentros);
+        conexao.delete("CATEGORIALIVRO","CODIGO = ?",paramentros);
 
 
     }
@@ -46,15 +46,16 @@ public class CategoriaLivroRepositorio {
     public void alterar(CategoriaLivro categoriaLivro){
 
         ContentValues contentValues = new ContentValues();
+        contentValues.put("CODIGO",categoriaLivro.codigo);
         contentValues.put("CDCATEGORIA", categoriaLivro.cdCategoria);
         contentValues.put("DSCATEGORIA",categoriaLivro.dsCategoria);
         contentValues.put("NUMMAXDIAS",categoriaLivro.numMaxDias);
         contentValues.put("TXMULTA",categoriaLivro.taxaMulta);
 
         String[] paramentros = new String[1];
-        paramentros[0] = String.valueOf(categoriaLivro.cdCategoria);
+        paramentros[0] = String.valueOf(categoriaLivro.codigo);
 
-        conexao.update("CATEGORIALIVRO", contentValues, "CDCATEGORIA = ?",paramentros);
+        conexao.update("CATEGORIALIVRO", contentValues, "CODIGO = ?",paramentros);
 
     }
 
@@ -63,7 +64,7 @@ public class CategoriaLivroRepositorio {
 
         List<CategoriaLivro> categoriaLivros = new ArrayList<CategoriaLivro>();
         StringBuilder sql = new StringBuilder();
-        sql.append("SELECT CDCATEGORIA, DSCATEGORIA, NUMMAXDIAS, TXMULTA");
+        sql.append("SELECT CODIGO, CDCATEGORIA, DSCATEGORIA, NUMMAXDIAS, TXMULTA");
         sql.append("   FROM CATEGORIALIVRO");
 
         Cursor resultado = conexao.rawQuery(sql.toString(),null);
@@ -74,7 +75,8 @@ public class CategoriaLivroRepositorio {
             do {
                 CategoriaLivro categoriaLivro = new CategoriaLivro();
 
-                categoriaLivro.cdCategoria = resultado.getInt(resultado.getColumnIndexOrThrow("CDCATEGORIA"));
+                categoriaLivro.codigo = resultado.getInt(resultado.getColumnIndexOrThrow("CODIGO"));
+                categoriaLivro.cdCategoria = resultado.getString(resultado.getColumnIndexOrThrow("CDCATEGORIA"));
                 categoriaLivro.dsCategoria = resultado.getString(resultado.getColumnIndexOrThrow("DSCATEGORIA"));
                 categoriaLivro.numMaxDias = resultado.getString(resultado.getColumnIndexOrThrow("NUMMAXDIAS"));
                 categoriaLivro.taxaMulta = resultado.getString(resultado.getColumnIndexOrThrow("TXMULTA"));

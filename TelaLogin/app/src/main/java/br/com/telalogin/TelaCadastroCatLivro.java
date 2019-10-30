@@ -79,7 +79,7 @@ public class TelaCadastroCatLivro extends AppCompatActivity {
 
         boolean resposta = false;
 
-        int cdCategoria = Integer.parseInt(edtCdCategoria.getText().toString());
+        String cdCategoria =  edtCdCategoria.getText().toString();
         String dsCategoria = edtDsCategoria.getText().toString();
         String numMaxDias = edtNumMaxDias.getText().toString();
         String taxaMulta = edtTaxaMulta.getText().toString();
@@ -139,7 +139,7 @@ public class TelaCadastroCatLivro extends AppCompatActivity {
 
             case R.id.action_excluir:
 
-                categoriaLivroRepositorio.excluir(categoriaLivro.cdCategoria);
+                categoriaLivroRepositorio.excluir(categoriaLivro.codigo);
                 finish();
 
         }
@@ -151,12 +151,14 @@ public class TelaCadastroCatLivro extends AppCompatActivity {
         if (validarCampos() == false) {
             try {
 
-                //if (categoriaLivro.cdCategoria != 0) {
+                if(categoriaLivro.codigo == 0) {
                     categoriaLivroRepositorio.inserir(categoriaLivro);
                     alert("Dados inseridos na Base");
-                //}else {
+                }else {
                     categoriaLivroRepositorio.alterar(categoriaLivro);
-                //}
+                }
+
+
 
                 finish();
 

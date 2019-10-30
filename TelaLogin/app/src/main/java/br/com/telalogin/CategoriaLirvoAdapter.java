@@ -30,9 +30,9 @@ public class CategoriaLirvoAdapter extends RecyclerView.Adapter<CategoriaLirvoAd
 
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
 
-        View view = layoutInflater.inflate(R.layout.lista_leitores, parent, false);
+        View view = layoutInflater.inflate(R.layout.lista_categoria_livros, parent, false);
 
-        CategoriaLirvoAdapter.ViewHolderCategoriaLivro holderCatLivro = new CategoriaLirvoAdapter.ViewHolderCategoriaLivro(view, parent.getContext());
+        ViewHolderCategoriaLivro holderCatLivro = new ViewHolderCategoriaLivro(view, parent.getContext());
 
 
         return holderCatLivro;
