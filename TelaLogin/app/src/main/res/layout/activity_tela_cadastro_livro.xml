@@ -15,7 +15,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/txtCodigo"
+            android:id="@+id/txtCodigoLivro"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/lbl_Codigo_livro" />
@@ -54,7 +54,7 @@
             android:inputType="textPersonName" />
 
         <TextView
-            android:id="@+id/txtCdCategoria"
+            android:id="@+id/txtCodCategoria"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/lbl_cdCategoria" />

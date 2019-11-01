@@ -27,6 +27,9 @@
             android:name=".TelaListaLeitores"
             android:label="Leitores Cadastrados" />
         <activity
+            android:name=".TelaListaLivro"
+            android:label="Livros Cadastrados" />
+        <activity
             android:name=".TelaCadastroCatLeitor"
             android:label="Cadastrar Leitores" />
         <activity

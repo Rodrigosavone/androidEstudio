@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Menu;
@@ -11,6 +13,12 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import br.com.telalogin.Dominio.Entidades.Cliente;
+import br.com.telalogin.Dominio.Entidades.Livro;
+import br.com.telalogin.Dominio.Repositorio.ClienteRepositorio;
+import br.com.telalogin.Dominio.Repositorio.LivroRepositorio;
+import br.com.telalogin.database.BancoDeDados;
 
 public class TelaCadastroLivro extends AppCompatActivity {
 
@@ -24,6 +32,12 @@ public class TelaCadastroLivro extends AppCompatActivity {
     private EditText edtNumEdicao;
     private EditText edtEditora;
     private EditText edtNumPagina;
+
+    private SQLiteDatabase conexao;
+    private BancoDeDados bancoDeDados;
+
+    private LivroRepositorio livroRepositorio;
+    private Livro livro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +56,33 @@ public class TelaCadastroLivro extends AppCompatActivity {
         edtEditora = (EditText)findViewById(R.id.edtEditora);
         edtNumPagina = (EditText)findViewById(R.id.edtNumPagina);
 
-        validarCampos();
+        criarConexao();
 
+        //recuperar a informação por parametro
+        verificaParametro();
+
+    }
+
+    //recupera as informações a hora de alterar o cadastro do cliente
+    private void verificaParametro(){
+        Bundle bundle = getIntent().getExtras();
+
+        livro = new Livro();
+
+        if((bundle != null) && (bundle.containsKey("LIVRO"))){
+            livro = (Livro) bundle.getSerializable("LIVRO");
+
+            edtCodigoLivro.setText(livro.codigoLivro);
+            edtISBN.setText(livro.ISBN);
+            edtTitulo.setText(livro.titulo);
+            edtCategoria.setText(livro.categoria);
+            edtAutores.setText(livro.autor);
+            edtPalavraChave.setText(livro.palavraChave);
+            edtDtPublicao.setText(livro.dtPublicacao);
+            edtNumEdicao.setText(livro.numEdicao);
+            edtEditora.setText(livro.editora);
+            edtNumPagina.setText(livro.numPagina);
+        }
     }
 
     // Método para Validar o Campos preenchidos na tela
@@ -64,12 +103,17 @@ public class TelaCadastroLivro extends AppCompatActivity {
 
 
 
-//        //Populando o obejto categoriaLivro
-//        categoriaLivro.cdCategoria = cdCategoria;
-//        categoriaLivro.dsCategoria = dsCategoria;
-//        categoriaLivro.numMaxDias = numMaxDias;
-//        categoriaLivro.taxaMulta = taxaMulta;
-
+//        //Populando o obejto livro
+        livro.codigoLivro = codigoLivro;
+        livro.ISBN = ISBN;
+        livro.titulo = titulo;
+        livro.categoria = categoria;
+        livro.autor = autor;
+        livro.palavraChave = palavraChave;
+        livro.dtPublicacao = dtPublicacao;
+        livro.numEdicao = numEdicao;
+        livro.editora = editora;
+        livro.numPagina = numPagina;
 
 
         if(isCampoVazio(codigoLivro)){
@@ -115,9 +159,58 @@ public class TelaCadastroLivro extends AppCompatActivity {
 
         return resposta;
     }
+
+
     public boolean isCampoVazio(String valor){
         boolean resultado = (TextUtils.isEmpty(valor) || valor.trim().isEmpty());
         return resultado;
+    }
+
+
+
+    //Metodo para criar Conexão com a Base de Dados
+    private void criarConexao(){
+        try{
+            bancoDeDados = new BancoDeDados(this);
+
+            conexao = bancoDeDados.getWritableDatabase();
+
+            livroRepositorio = new LivroRepositorio(conexao);
+
+
+
+        }catch(SQLException e){
+            AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+            dialog.setTitle((R.string.title_erro));
+            dialog.setMessage(e.getMessage());
+            dialog.setNeutralButton("Ok",null);
+            dialog.show();
+
+
+        }
+    }
+    public void confirmar() {
+
+        if (validarCampos() == false) {
+            try {
+
+                if (livro.codigo == 0) {
+                    livroRepositorio.inserir(livro);
+                }else {
+                    livroRepositorio.alterar(livro);
+                }
+
+                finish();
+
+            } catch (SQLException e) {
+                AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+                dialog.setTitle((R.string.title_erro));
+                dialog.setMessage(e.getMessage());
+                dialog.setNeutralButton("Ok", null);
+                dialog.show();
+            }
+
+        }
     }
 
     @Override
@@ -130,12 +223,12 @@ public class TelaCadastroLivro extends AppCompatActivity {
                 finish();
 
             case R.id.action_ok:
-                //confirmar();
+                confirmar();
                 break;
 
             case R.id.action_excluir:
 
-                //categoriaLivroRepositorio.excluir(categoriaLivro.codigo);
+                livroRepositorio.excluir(livro.codigo);
                 finish();
 
         }

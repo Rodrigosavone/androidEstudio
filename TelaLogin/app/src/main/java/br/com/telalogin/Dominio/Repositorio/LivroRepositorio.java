@@ -63,7 +63,7 @@ public class LivroRepositorio {
 
     }
 
-    //Metodo para consultar A lista de leitores cadastrados
+    //Metodo para consultar A lista de Livros cadastrados
     public List<Livro> buscar(){
 
         List<Livro> livros = new ArrayList<Livro>();

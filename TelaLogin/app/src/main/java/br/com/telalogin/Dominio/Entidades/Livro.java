@@ -1,6 +1,8 @@
 package br.com.telalogin.Dominio.Entidades;
 
-public class Livro {
+import java.io.Serializable;
+
+public class Livro implements Serializable {
     public int codigo;
     public String codigoLivro;
     public String ISBN;
