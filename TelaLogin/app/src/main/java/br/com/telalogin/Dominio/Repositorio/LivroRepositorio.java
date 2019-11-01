@@ -23,6 +23,7 @@ public class LivroRepositorio {
         ContentValues contentValues = new ContentValues();
         contentValues.put("CODIGOLIVRO",livro.codigoLivro);
         contentValues.put("ISBN",livro.ISBN);
+        contentValues.put("TITULO",livro.titulo);
         contentValues.put("CATEGORIA",livro.categoria);
         contentValues.put("AUTOR",livro.autor);
         contentValues.put("PALAVRACHAVE",livro.palavraChave);
@@ -48,6 +49,7 @@ public class LivroRepositorio {
         ContentValues contentValues = new ContentValues();
         contentValues.put("CODIGOLIVRO",livro.codigoLivro);
         contentValues.put("ISBN",livro.ISBN);
+        contentValues.put("TITULO",livro.titulo);
         contentValues.put("CATEGORIA",livro.categoria);
         contentValues.put("AUTOR",livro.autor);
         contentValues.put("PALAVRACHAVE",livro.palavraChave);
@@ -68,8 +70,7 @@ public class LivroRepositorio {
 
         List<Livro> livros = new ArrayList<Livro>();
         StringBuilder sql = new StringBuilder();
-        sql.append("SELECT CODIGO, CODIGOLIVRO, ISBN, CATEGORIA,");
-        sql.append("       AUTOR, PALAVRACHAVE, DTPUBLICACAO, NUMEDICAO, EDITORA, NUMPAGINA");
+        sql.append("SELECT CODIGO, CODIGOLIVRO, ISBN, TITULO, CATEGORIA, AUTOR, PALAVRACHAVE, DTPUBLICACAO, NUMEDICAO, EDITORA, NUMPAGINA");
         sql.append("  FROM LIVRO");
 
         Cursor resultado = conexao.rawQuery(sql.toString(),null);
@@ -83,6 +84,7 @@ public class LivroRepositorio {
                 livro.codigo = resultado.getInt(resultado.getColumnIndexOrThrow("CODIGO"));
                 livro.codigoLivro = resultado.getString(resultado.getColumnIndexOrThrow("CODIGOLIVRO"));
                 livro.ISBN = resultado.getString(resultado.getColumnIndexOrThrow("ISBN"));
+                livro.titulo = resultado.getString(resultado.getColumnIndexOrThrow("TITULO"));
                 livro.categoria = resultado.getString(resultado.getColumnIndexOrThrow("CATEGORIA"));
                 livro.autor = resultado.getString(resultado.getColumnIndexOrThrow("AUTOR"));
                 livro.palavraChave = resultado.getString(resultado.getColumnIndexOrThrow("PALAVRACHAVE"));

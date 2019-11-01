@@ -177,6 +177,7 @@ public class TelaCadastroLivro extends AppCompatActivity {
 
             livroRepositorio = new LivroRepositorio(conexao);
 
+            alert("Conexão Criada");
 
 
         }catch(SQLException e){

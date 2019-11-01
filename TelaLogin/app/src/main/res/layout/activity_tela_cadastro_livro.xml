@@ -18,131 +18,191 @@
             android:id="@+id/txtCodigoLivro"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/lbl_Codigo_livro" />
+            android:text="@string/lbl_Codigo_livro"
+            app:layout_constraintEnd_toEndOf="@+id/txtCodigoLivro"
+            app:layout_constraintStart_toStartOf="@+id/txtCodigoLivro"
+            app:layout_constraintTop_toBottomOf="@+id/txtCodigoLivro" />
 
         <EditText
             android:id="@+id/edtCodigoLivro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/txtCodigoLivro"
+            app:layout_constraintStart_toStartOf="@+id/txtCodigoLivro"
+            app:layout_constraintTop_toBottomOf="@+id/txtCodigoLivro"/>
 
         <TextView
             android:id="@+id/txtISBN"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/lbl_ISBN" />
+            android:text="@string/lbl_ISBN"
+            app:layout_constraintEnd_toEndOf="@+id/txtISBN"
+            app:layout_constraintStart_toStartOf="@+id/txtISBN"
+            app:layout_constraintTop_toBottomOf="@+id/txtISBN"/>
 
         <EditText
             android:id="@+id/edtISBN"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/txtISBN"
+            app:layout_constraintStart_toStartOf="@+id/txtISBN"
+            app:layout_constraintTop_toBottomOf="@+id/txtISBN"/>
 
         <TextView
             android:id="@+id/txtTitulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/lbl_Titulo" />
+            android:text="@string/lbl_Titulo"
+            app:layout_constraintEnd_toEndOf="@+id/txtTitulo"
+            app:layout_constraintStart_toStartOf="@+id/txtTitulo"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitulo"/>
 
         <EditText
             android:id="@+id/edtTitulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/txtTitulo"
+            app:layout_constraintStart_toStartOf="@+id/txtTitulo"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitulo"/>
 
         <TextView
             android:id="@+id/txtCodCategoria"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/lbl_cdCategoria" />
+            android:text="@string/lbl_cdCategoria"
+            app:layout_constraintEnd_toEndOf="@+id/txtCodCategoria"
+            app:layout_constraintStart_toStartOf="@+id/txtCodCategoria"
+            app:layout_constraintTop_toBottomOf="@+id/txtCodCategoria"/>
 
         <EditText
             android:id="@+id/edtCategoria"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/txtCodCategoria"
+            app:layout_constraintStart_toStartOf="@+id/txtCodCategoria"
+            app:layout_constraintTop_toBottomOf="@+id/txtCodCategoria"/>
 
         <TextView
             android:id="@+id/txtAutores"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/lbl_Autores" />
+            android:text="@string/lbl_Autores"
+            app:layout_constraintEnd_toEndOf="@+id/txtAutores"
+            app:layout_constraintStart_toStartOf="@+id/txtAutores"
+            app:layout_constraintTop_toBottomOf="@+id/txtAutores"/>
 
         <EditText
             android:id="@+id/edtAutores"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/txtAutores"
+            app:layout_constraintStart_toStartOf="@+id/txtAutores"
+            app:layout_constraintTop_toBottomOf="@+id/txtAutores"/>
 
         <TextView
             android:id="@+id/txtPalavraChave"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/lbl_palavra_chave" />
+            android:text="@string/lbl_palavra_chave"
+            app:layout_constraintEnd_toEndOf="@+id/txtPalavraChave"
+            app:layout_constraintStart_toStartOf="@+id/txtPalavraChave"
+            app:layout_constraintTop_toBottomOf="@+id/txtPalavraChave"/>
 
         <EditText
             android:id="@+id/edtPalavraChave"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/txtPalavraChave"
+            app:layout_constraintStart_toStartOf="@+id/txtPalavraChave"
+            app:layout_constraintTop_toBottomOf="@+id/txtPalavraChave"/>
 
         <TextView
             android:id="@+id/txtDtPublicacao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/lbl_data_publicacao" />
+            android:text="@string/lbl_data_publicacao"
+            app:layout_constraintEnd_toEndOf="@+id/txtDtPublicacao"
+            app:layout_constraintStart_toStartOf="@+id/txtDtPublicacao"
+            app:layout_constraintTop_toBottomOf="@+id/txtDtPublicacao"/>
 
         <EditText
             android:id="@+id/edtDtPublicao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="date" />
+            android:inputType="date"
+            app:layout_constraintEnd_toEndOf="@+id/txtDtPublicacao"
+            app:layout_constraintStart_toStartOf="@+id/txtDtPublicacao"
+            app:layout_constraintTop_toBottomOf="@+id/txtDtPublicacao"/>
 
         <TextView
             android:id="@+id/txtNumEdicao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/lbl_numero_edicao" />
+            android:text="@string/lbl_numero_edicao"
+            app:layout_constraintEnd_toEndOf="@+id/txtNumEdicao"
+            app:layout_constraintStart_toStartOf="@+id/txtNumEdicao"
+            app:layout_constraintTop_toBottomOf="@+id/txtNumEdicao"/>
 
         <EditText
             android:id="@+id/edtNumEdicao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="number" />
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="@+id/txtNumEdicao"
+            app:layout_constraintStart_toStartOf="@+id/txtNumEdicao"
+            app:layout_constraintTop_toBottomOf="@+id/txtNumEdicao"/>
 
         <TextView
             android:id="@+id/txtEditora"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/lbl_editora" />
+            android:text="@string/lbl_editora"
+            app:layout_constraintEnd_toEndOf="@+id/txtEditora"
+            app:layout_constraintStart_toStartOf="@+id/txtEditora"
+            app:layout_constraintTop_toBottomOf="@+id/txtEditora"/>
 
         <EditText
             android:id="@+id/edtEditora"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/txtEditora"
+            app:layout_constraintStart_toStartOf="@+id/txtEditora"
+            app:layout_constraintTop_toBottomOf="@+id/txtEditora"/>
 
         <TextView
             android:id="@+id/txtNumPagina"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/lbl_numero_paginas" />
+            android:text="@string/lbl_numero_paginas"
+            app:layout_constraintEnd_toEndOf="@+id/txtNumPagina"
+            app:layout_constraintStart_toStartOf="@+id/txtNumPagina"
+            app:layout_constraintTop_toBottomOf="@+id/txtNumPagina"/>
 
         <EditText
             android:id="@+id/edtNumPagina"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="number" />
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="@+id/edtNumPagina"
+            app:layout_constraintStart_toStartOf="@+id/edtNumPagina"
+            app:layout_constraintTop_toBottomOf="@+id/edtNumPagina"/>
 
     </LinearLayout>
 

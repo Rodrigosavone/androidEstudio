@@ -56,6 +56,7 @@ public class Script {
         sql.append("   CODIGO           INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, ");
         sql.append("   CODIGOLIVRO      VARCHAR (70) NOT NULL DEFAULT (''), ");
         sql.append("   ISBN             VARCHAR (70) NOT NULL DEFAULT (''), ");
+        sql.append("   TITULO           VARCHAR (70) NOT NULL DEFAULT (''), ");
         sql.append("   CATEGORIA        VARCHAR (70) NOT NULL DEFAULT (''), ");
         sql.append("   AUTOR            VARCHAR (70) NOT NULL DEFAULT (''), ");
         sql.append("   PALAVRACHAVE     VARCHAR (70) NOT NULL DEFAULT (''), ");

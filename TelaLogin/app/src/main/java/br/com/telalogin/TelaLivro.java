@@ -24,7 +24,7 @@ public class TelaLivro extends AppCompatActivity {
     }
 
     public void irParaTelaListaLivros(View view) {
-        Intent intent = new Intent(getApplicationContext(), TelaListaCategoriaLivros.class);
+        Intent intent = new Intent(getApplicationContext(), TelaListaLivro.class);
         startActivity(intent);
     }
 

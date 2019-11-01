@@ -37,14 +37,14 @@ public class LivroAdapter extends RecyclerView.Adapter<LivroAdapter.ViewHolderLi
     }
 
     @Override
-    public void onBindViewHolder(LivroAdapter.ViewHolderLivro holder, int position) {
+    public void onBindViewHolder(@NonNull LivroAdapter.ViewHolderLivro holder, int position) {
         if((dados != null) && (dados.size() > 0)) {
 
             Livro livro = dados.get(position);
 
             holder.txtCodigoLivro.setText("Código do Livro: " + livro.codigoLivro);
             holder.txtTitulo.setText("Titulo do Livro: " + livro.titulo);
-            holder.txtCategoria.setText("Categoria do Livro: " + livro.categoria);
+            //holder.txtCodCategoria.setText("Categoria do Livro: " + livro.categoria);
             holder.txtAutores.setText("Autor do Livro: " + livro.autor);
             holder.txtEditora.setText("Editora do Livro: " + livro.editora);
             holder.txtNumPagina.setText("Número de Páginas: " + livro.numPagina + " paginas");
@@ -63,7 +63,7 @@ public class LivroAdapter extends RecyclerView.Adapter<LivroAdapter.ViewHolderLi
         public TextView txtCodigoLivro;
         public TextView txtISBN;
         public TextView txtTitulo;
-        public TextView txtCategoria;
+        public TextView txtCodCategoria;
         public TextView txtAutores;
         public TextView txtPalavraChave;
         public TextView txtDtPublicacao;
@@ -77,7 +77,7 @@ public class LivroAdapter extends RecyclerView.Adapter<LivroAdapter.ViewHolderLi
             txtCodigoLivro = (TextView) itemView.findViewById(R.id.txtCodigoLivro);
             txtISBN = (TextView)itemView.findViewById(R.id.txtISBN);
             txtTitulo = (TextView)itemView.findViewById(R.id.txtTitulo);
-            txtCategoria = (TextView)itemView.findViewById(R.id.txtCodCategoria);
+            txtCodCategoria = (TextView)itemView.findViewById(R.id.txtCodCategoria);
             txtAutores = (TextView)itemView.findViewById(R.id.txtAutores);
             txtPalavraChave = (TextView)itemView.findViewById(R.id.txtPalavraChave);
             txtDtPublicacao = (TextView)itemView.findViewById(R.id.txtDtPublicacao);
