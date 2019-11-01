@@ -28,4 +28,9 @@ public class ListaDeCadastros extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(),TelaCategoriaLivro.class);
         startActivityForResult(intent, 0);
     }
+
+    public void irParaTelaLivro(View view) {
+        Intent intent = new Intent(getApplicationContext(),TelaLivro.class);
+        startActivityForResult(intent, 0);
+    }
 }

@@ -20,4 +20,13 @@
     <string name="lbl_dsCategoria">Descrição da Categoria</string>
     <string name="lbl_txtNumMaxDias">Numero máximo de dias que é possivel emprestar a obra</string>
     <string name="lbl_txtTaxaMulta">Taxa de Multa</string>
+    <string name="lbl_Titulo">Título</string>
+    <string name="lbl_ISBN">ISBN</string>
+    <string name="lbl_Codigo_livro">Código do Livro</string>
+    <string name="lbl_Autores">Autores</string>
+    <string name="lbl_palavra_chave">Palavra-Chave</string>
+    <string name="lbl_data_publicacao">Data de Pulicação</string>
+    <string name="lbl_numero_edicao">Número de Edição</string>
+    <string name="lbl_editora">Editora</string>
+    <string name="lbl_numero_paginas">Número de Páginas</string>
 </resources>
