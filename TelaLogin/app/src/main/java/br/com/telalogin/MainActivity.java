@@ -21,6 +21,14 @@ import br.com.telalogin.Dominio.Entidades.Cliente;
 import br.com.telalogin.Dominio.Repositorio.ClienteRepositorio;
 import br.com.telalogin.database.BancoDeDados;
 
+/**
+ * NOME DO GRUPO:
+ * RODRIGO TORRES SAVONE: RA 20530679
+ * LEONARDO DE SÁ SANTOS: RA: 20936105
+ * FELIPE SEIJI: RA: 20916828
+ * GABRIEL MOREIRA: RA: 20651385
+ */
+
 public class MainActivity extends AppCompatActivity {
 
     private SQLiteDatabase conexao;
@@ -43,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                 TextView tSenha = (TextView) findViewById(R.id.tSenha);
                 String login = tLogin.getText().toString();
                 String senha = tSenha.getText().toString();
-                if(login.equals("Rodrigo") && senha.equals("12345")){
+                if(login.equals("Bookdroid") && senha.equals("12345")){
                     alert("Login Realizado com Sucesso");
                     irParaTelaListaCadastro(view);
                 }else {
